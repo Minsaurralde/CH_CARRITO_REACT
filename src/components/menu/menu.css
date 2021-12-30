@@ -1,0 +1,28 @@
+/* Estilos para menu */
+header {
+	background-color: RGB(30,30,30);
+	display: flex;
+	align-items: center;
+}
+img {
+	width: 200px;
+	vertical-align: middle
+}
+.menu-lista {
+	list-style: none; /* Eliminacion de viñeta */
+	margin: 0 0 25px 10px;
+	padding: 0px;
+	display: inline;
+}
+.menu-lista li {
+	display: inline-block;
+}
+.menu-lista a {
+	text-decoration: none;
+	color: white;
+	font-size:14px;
+	padding: 10px;
+}
+.menu-lista a:hover{
+	background-color: #58A6EA;
+}
