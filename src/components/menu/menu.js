@@ -2,16 +2,22 @@ import "./menu.css";
 
 export const NavBar = () => {
   return(
-    <header className="nav-container">
+    <div className="nav-container">
       <img src="" alt="logotipo" />
       <nav>
         <ul className="lista">
-          <li><a href="#">Inicio</a></li>
-          <li><a href="#">categorias</a></li>
+          <li><a href="#">Categorias</a>
+              <ul className="desplegable">
+                <li><a href="#">Planes</a></li>
+                <li><a href="#">Internet</a></li>
+                <li><a href="#">Equipos</a></li>
+              </ul>
+          </li>
+          <li><a href="#">Ofertas</a></li>
           <li><a href="#">Ingresar</a></li>
-          <li><a href="#">Carrito</a></li>
+          <li><a href="#">Mis compras</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
   );
 };

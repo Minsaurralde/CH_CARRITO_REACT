@@ -1,28 +1,55 @@
-/* Estilos para menu */
+/* Reset estilos */
+*{
+  margin: 0;
+  padding: 0;
+}
+
+/* Estilos para menu flex */
 .nav-container {
-	background-color: RGB(30,30,30);
+	background-color: grey;
+	width: 100%;
 	display: flex;
-	align-items: center;
+	justify-content: space-between;
 }
 .nav-container img {
-	width: 200px;
+	width: 20%;
 	vertical-align: middle
 }
+.nav-container nav {
+	width: 60%;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+}
+/* Estilos para submenu */
 .lista {
 	list-style: none; /* Eliminacion de viñeta */
-	margin: 0 0 25px 10px;
-	padding: 0px;
-	display: inline;
+	padding: 1em;
+  font-size: 0; /*truco para que no me ocupe mas espacio el inline-block oculto*/
 }
 .lista li {
 	display: inline-block;
+	padding: 1em;
+  position: relative;
+  font-size: 14px;
 }
 .lista a {
 	text-decoration: none;
 	color: white;
-	font-size:14px;
 	padding: 10px;
 }
 .lista a:hover{
-	background-color: #58A6EA;
+	color: #000;
+	background-color: #eaeaea;
+}
+.desplegable {
+	background-color: grey;
+	position: absolute;
+	z-index: 1;
+	margin: 1em 0;
+	display: none;
+}
+.lista li:hover .desplegable {
+	display: block;
 }
