@@ -1,28 +1,28 @@
 /* Estilos para menu */
-header {
+.nav-container {
 	background-color: RGB(30,30,30);
 	display: flex;
 	align-items: center;
 }
-img {
+.nav-container img {
 	width: 200px;
 	vertical-align: middle
 }
-.menu-lista {
+.lista {
 	list-style: none; /* Eliminacion de viñeta */
 	margin: 0 0 25px 10px;
 	padding: 0px;
 	display: inline;
 }
-.menu-lista li {
+.lista li {
 	display: inline-block;
 }
-.menu-lista a {
+.lista a {
 	text-decoration: none;
 	color: white;
 	font-size:14px;
 	padding: 10px;
 }
-.menu-lista a:hover{
+.lista a:hover{
 	background-color: #58A6EA;
 }

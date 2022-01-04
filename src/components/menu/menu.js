@@ -1,11 +1,11 @@
 import "./menu.css";
 
-export const navMenu = () => {
+export const NavBar = () => {
   return(
-    <header>
+    <header className="nav-container">
       <img src="" alt="logotipo" />
-      <nav className="menu-container">
-        <ul className="menu-lista">
+      <nav>
+        <ul className="lista">
           <li><a href="#">Inicio</a></li>
           <li><a href="#">categorias</a></li>
           <li><a href="#">Ingresar</a></li>
