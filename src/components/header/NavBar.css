@@ -53,3 +53,9 @@
 .lista li:hover .desplegable {
 	display: block;
 }
+
+#carrito{
+	color: white;
+	font-size: 20px;
+	cursor: pointer;
+}
