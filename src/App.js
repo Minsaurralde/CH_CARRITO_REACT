@@ -10,7 +10,6 @@ function App() {
       </header>
       <main>
         <ItemListContainer greeting="Hola! soy la propiedad de bienvenida">
-          <h2>Soy un children h2</h2>
           <p>Soy un children p</p>
         </ItemListContainer>
       </main>

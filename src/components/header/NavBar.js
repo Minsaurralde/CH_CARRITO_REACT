@@ -9,9 +9,9 @@ export const NavBar = () => {
         <ul className="lista">
           <li><a href="#">Categorias</a>
               <ul className="desplegable">
-                <li><a href="#">Categoria 1</a></li>
-                <li><a href="#">Categoria 2</a></li>
-                <li><a href="#">Categoria 3</a></li>
+                <li><a href="#">Categoria1</a></li>
+                <li><a href="#">Categoria2</a></li>
+                <li><a href="#">Categoria3</a></li>
               </ul>
           </li>
           <li><a href="#">Ofertas</a></li>
