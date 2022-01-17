@@ -1,0 +1,16 @@
+.categoria-container{
+	display: flex;
+}
+.items{
+	width: 100%;
+}
+.titleSection{
+	padding: 1em;
+}
+.section-coleccion{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	gap: 24px;
+	width: 100%;
+}
