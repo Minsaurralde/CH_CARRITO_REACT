@@ -1,5 +1,4 @@
 import "./ItemListContainer.css";
-import { ItemCount } from "../card/ItemCount";
 import { ItemList} from "../invocacionAPI/ItemList";
 
 export const ItemListContainer = ( props ) => {

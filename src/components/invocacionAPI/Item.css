@@ -1,10 +1,11 @@
 .product {
+  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;  
+  background-color: #fafafa;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 240px;
-  background-color: #fafafa;
   padding: 24px;
   border-radius: 16px;
   gap: 12px;
@@ -22,18 +23,11 @@
   display: flex;
 }
 
-.price,
-.rating {
+.price {
   padding: 4px 8px;
   border-radius: 4px;
   background-color: #bdbdbd;
   margin: 4px;
   font-size: 12px;
   color: white;
-}
-
-.description,
-.category {
-  font-size: 16px;
-  margin: 0;
 }

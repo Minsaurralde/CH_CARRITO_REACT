@@ -6,7 +6,7 @@
 
 /* Estilos para menu flex */
 .nav-container {
-	background-color: grey;
+	background-color: #1b1b1d;
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
@@ -44,7 +44,7 @@
 	background-color: #eaeaea;
 }
 .desplegable {
-	background-color: grey;
+	background-color: #1b1b1d;
 	position: absolute;
 	z-index: 1;
 	margin: 1em 0;

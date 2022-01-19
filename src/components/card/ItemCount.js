@@ -26,7 +26,6 @@ export const ItemCount = (props) => {
 
   	return(
 	    <div className="card">
-		    <h3 className="card-title">Nombre del producto</h3>
 		    <div className="card-count">
 			    <button onClick={(e) => contador(e)}>-</button>
 			    <span> {countClick} </span>

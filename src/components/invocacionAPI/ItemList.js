@@ -24,8 +24,7 @@ export const ItemList = () => {
           ) : (
             <p>Cargando items...</p>
           )}
-        </div>
-        
+        </div>        
       </section>
     </div>
   );
