@@ -9,25 +9,28 @@ import { NavBar } from "./components/header/NavBar";
 function App() {
   return (
     <div className="App">
+
       <Router>
         <header>
           <NavBar/>
-        </header>
-
+        </header>    
+        
         <Switch>
           <Route exact path="/">
             <Home/>
           </Route>
+              
           <Route path="/detail/:productId">
             <Detail/>
           </Route>
+          
           <Route path="*">
             <Error/>
-          </Route>
+          </Route> 
         </Switch>
-      </Router>
 
-      <footer></footer>
+        <footer></footer>
+      </Router>
     </div>
   );
 }

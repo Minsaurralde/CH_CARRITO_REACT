@@ -7,6 +7,6 @@ export const Home = () => {
 	    <ItemListContainer greeting="Hola! soy la propiedad de bienvenida">
 	      <p>Soy un children p</p>
 	    </ItemListContainer>
-	</main>
+		</main>
   );
 };
