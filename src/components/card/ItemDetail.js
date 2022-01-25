@@ -1,5 +1,5 @@
 import "./ItemDetail.css";
-import { ItemCount } from "../card/ItemCount";
+import { ItemCount } from "./ItemCount";
 
 export const ItemDetail = ({
   id,

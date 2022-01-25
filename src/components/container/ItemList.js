@@ -1,5 +1,5 @@
 import "./ItemList.css";
-import { Item } from "./Item";
+import { Item } from "../card/Item";
 
 export const ItemList = ({coleccion}) => {
 

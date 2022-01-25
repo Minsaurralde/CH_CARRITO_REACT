@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import { ItemDetail } from "./ItemDetail";
+import { ItemDetail } from "../card/ItemDetail";
 
 export const ItemDetailContainer = () => {
   const { productId } = useParams();
@@ -22,7 +22,7 @@ export const ItemDetailContainer = () => {
   return (
     <div className="section-detail">
       <Link to={`/`}>
-        <button>Volver</button>
+        <button>Volver a catalogo</button>
       </Link>
       {product ? (
         <ItemDetail {...product} />

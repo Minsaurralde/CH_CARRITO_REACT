@@ -1,4 +1,4 @@
-import { ItemDetailContainer } from "../invocacionAPI/ItemDetailContainer";
+import { ItemDetailContainer } from "../container/ItemDetailContainer";
 
 export const Detail = () => {
 

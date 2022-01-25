@@ -1,21 +1,25 @@
 import "./NavBar.css";
 import { CartWidget } from "../icons/ShoppingCart"
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+
+import logotipo from './logotipo.png';
+
 
 export const NavBar = () => {
   return(
     <div className="nav-container">
-      <img src="" alt="logotipo" />
+      <Link to="/"><img src={logotipo} alt="logotipo" /></Link>
       <nav>
         <ul className="lista">
           <li><a href="#">Categorias</a>
               <ul className="desplegable">
-                <li><a href="#">Categoria1</a></li>
-                <li><a href="#">Categoria2</a></li>
-                <li><a href="#">Categoria3</a></li>
+                <li><NavLink to="/category/jewelery">Joyeria</NavLink></li>
+                <li><NavLink to="/category/women's clothing">Mujer</NavLink></li>
+                <li><NavLink to="/category/men's clothing">Hombre</NavLink></li>
+                <li><NavLink to="/category/electronics">Electronica</NavLink></li>
               </ul>
           </li>
-          <li><NavLink to="/"><a href="#">Ver catalogo</a></NavLink></li>
+          <li><NavLink to="/">Ver catalogo</NavLink></li>
           <li id="carrito"><CartWidget/></li>
         </ul>
       </nav>
