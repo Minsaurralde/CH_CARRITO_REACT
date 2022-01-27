@@ -1,5 +1,7 @@
 import "./ItemDetail.css";
 import { ItemCount } from "./ItemCount";
+import React, {useState} from "react";
+import { Link } from "react-router-dom";
 
 export const ItemDetail = ({
   id,
@@ -10,11 +12,24 @@ export const ItemDetail = ({
   rating,
   title,
 }) => {
+  const [quantity, setQuantity] = useState(0);
+  const [showButton, setShowButton] = useState(true);
+
+  function onAdd(cantidad){
+    setQuantity(cantidad);
+    setShowButton(false);
+    alert(`Agregaste ${cantidad} items al carrito \nPresioná Finalizar compra para terminar`);
+  }
+  console.log(`hay ${quantity} items en el carrito`);
+
   return (    
     <div className="producto">
       <div className="caja-izquierda">
         <img className="imagen" src={image} alt="product image" />
-        <ItemCount stock={5} inicial={1}/>
+        {showButton?(<ItemCount stock={5} inicial={1} funcion={onAdd}/>)
+        :(<Link to={`/cart`}>
+            <button>Finalizar compra</button>
+          </Link>)} 
       </div>
 
       <div className="caja-derecha">

@@ -2,6 +2,7 @@ import "./ItemCount.css";
 import React, {useState} from "react";
 
 export const ItemCount = (props) => {
+	const agregar = props.funcion;
 	const [countClick, setCountClick] = useState(props.inicial);
 
 	function contador(e){
@@ -20,10 +21,6 @@ export const ItemCount = (props) => {
 		}
 	};
 
-	function onAdd(){
-		alert(`agregando ${countClick} items al carrito`)
-	};
-
   	return(
 	    <div className="card">
 		    <div className="card-count">
@@ -32,7 +29,7 @@ export const ItemCount = (props) => {
 			    <button onClick={(e) => contador(e)}>+</button>
 		    </div>
 		    <div className="card-add">
-		    	<button onClick={()=>onAdd()}>Agregar al carrito</button>
+		    	<button onClick={()=>agregar(countClick)}>Agregar al carrito</button>
 		    </div>		    
 	    </div>
   );
