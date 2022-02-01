@@ -1,17 +1,12 @@
 import "./ItemDetail.css";
 import { ItemCount } from "./ItemCount";
-import React, {useState} from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
-export const ItemDetail = ({
-  id,
-  category,
-  description,
-  image,
-  price,
-  rating,
-  title,
-}) => {
+export const ItemDetail = (product) => {
+  const {addItem} = useContext(CartContext);
+
   const [quantity, setQuantity] = useState(0);
   const [showButton, setShowButton] = useState(true);
 
@@ -20,37 +15,36 @@ export const ItemDetail = ({
     setShowButton(false);
     alert(`Agregaste ${cantidad} items al carrito \nPresioná Finalizar compra para terminar`);
   }
-  console.log(`hay ${quantity} items en el carrito`);
 
   return (    
     <div className="producto">
       <div className="caja-izquierda">
-        <img className="imagen" src={image} alt="product image" />
+        <img className="imagen" src={product.image} alt="product image" />
         {showButton?(<ItemCount stock={5} inicial={1} funcion={onAdd}/>)
         :(<Link to={`/cart`}>
-            <button>Finalizar compra</button>
+            <button onClick={()=>addItem(product, quantity)}>Finalizar compra</button>
           </Link>)} 
       </div>
 
       <div className="caja-derecha">
 
         <div className="seccion">
-          <h2 className="titulo">{title}</h2>
+          <h2 className="titulo">{product.title}</h2>
           <span className="datos">
-            <p className="precio">US${price}</p>
-            <p className="raiting">{rating.rate}</p>
+            <p className="precio">US${product.price}</p>
+            <p className="raiting">{product.rating.rate}</p>
           </span>
         </div>
 
         <div className="seccion">
-          <p className="condiciones">3 cuotas sin interes de US${Math.floor(price/3)} con tarjetas seleccionadas</p>
-          <p className="condiciones">6 cuotas sin interes de US${Math.floor(price/6)} con tarjetas seleccionadas</p>
+          <p className="condiciones">3 cuotas sin interes de US${Math.floor(product.price/3)} con tarjetas seleccionadas</p>
+          <p className="condiciones">6 cuotas sin interes de US${Math.floor(product.price/6)} con tarjetas seleccionadas</p>
         </div>
 
         <div className="seccion">
           <h2 className="titulo">Descripcion del producto</h2>
-          <p className="descripcion">{description}</p>
-          <p className="categoria">Categoria: {category}</p>
+          <p className="descripcion">{product.description}</p>
+          <p className="categoria">Categoria: {product.category}</p>
         </div>
       </div>      
     </div>
