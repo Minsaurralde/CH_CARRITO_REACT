@@ -4,6 +4,7 @@ export const CartContext = createContext([]);
 
 export const CartProvider = ( {children} ) => {
 	const [ cart, setCart ] = useState([]);
+	console.log(cart);
 
 	function isInCart(id){
 		const busqueda = cart.find((item) => item.id === id);
@@ -11,14 +12,18 @@ export const CartProvider = ( {children} ) => {
 	}
 	function addItem(obj, cantidad){
 		if (isInCart(obj.id)){
-			console.log("no se puede agregar, ya existe en el carrito")
+			let cartN = [...cart];
+			let idx = cartN.indexOf(cartN.find((item) => item.id === obj.id));
+			cartN[idx].cantidad = cartN[idx].cantidad + cantidad;
+			setCart(cartN);
 		}
 		else{setCart([...cart,{...obj, cantidad}]);}		
 	}
-	console.log(cart);
 	function removeItem(id){
-	    let indexBuscado = cart.indexOf(cart.find((item) => item.id === id));
-	    cart.splice(indexBuscado,1);
+	    // let indexBuscado = cart.indexOf(cart.find((item) => item.id === id));
+	    // cart.splice(indexBuscado,1);
+	    console.log('se elimino id: ' + id);
+	    setCart(cart.filter(item=>item.id !== id));
 	}
 	function clear(){
 		setCart([]);

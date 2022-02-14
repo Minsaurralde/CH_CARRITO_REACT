@@ -11,7 +11,7 @@ export const NavBar = () => {
       <Link to="/"><img src={logotipo} alt="logotipo" /></Link>
       <nav>
         <ul className="lista">
-          <li><a href="#">Categorias</a>
+          <li className="hover"><a href="#">Categorias</a>
               <ul className="desplegable">
                 <li><NavLink to="/category/jewelery">Joyeria</NavLink></li>
                 <li><NavLink to="/category/women's clothing">Mujer</NavLink></li>
@@ -19,7 +19,7 @@ export const NavBar = () => {
                 <li><NavLink to="/category/electronics">Electronica</NavLink></li>
               </ul>
           </li>
-          <li><NavLink to="/">Ver catalogo</NavLink></li>
+          <li className="hover"><NavLink to="/">Ver catalogo</NavLink></li>
           <li id="carrito"><CartWidget/></li>
         </ul>
       </nav>

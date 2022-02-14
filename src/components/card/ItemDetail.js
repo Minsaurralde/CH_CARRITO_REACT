@@ -6,13 +6,12 @@ import { CartContext } from "../context/CartContext";
 
 export const ItemDetail = (product) => {
   const {addItem} = useContext(CartContext);
-
-  const [quantity, setQuantity] = useState(0);
+  
   const [showButton, setShowButton] = useState(true);
 
   function onAdd(cantidad){
-    setQuantity(cantidad);
     setShowButton(false);
+    addItem(product, cantidad);
     alert(`Agregaste ${cantidad} items al carrito \nPresioná Finalizar compra para terminar`);
   }
 
@@ -22,7 +21,7 @@ export const ItemDetail = (product) => {
         <img className="imagen" src={product.image} alt="product image" />
         {showButton?(<ItemCount stock={5} inicial={1} funcion={onAdd}/>)
         :(<Link to={`/cart`}>
-            <button onClick={()=>addItem(product, quantity)}>Finalizar compra</button>
+            <button>Finalizar compra</button>
           </Link>)} 
       </div>
 

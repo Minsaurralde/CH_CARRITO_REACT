@@ -39,7 +39,7 @@
 	color: white;
 	padding: 10px;
 }
-.lista a:hover{
+.hover a:hover{
 	color: #000;
 	background-color: #eaeaea;
 }
@@ -55,7 +55,16 @@
 }
 
 #carrito{
-	color: white;
 	font-size: 20px;
+	color: white;
 	cursor: pointer;
+}
+#carrito span{
+	font-size: 15px;
+	background: #57dfb7;
+	border-radius: 0.9em;
+	width: 1.5em;
+	position: absolute;
+	top: 12px;
+	right: 12px;
 }
