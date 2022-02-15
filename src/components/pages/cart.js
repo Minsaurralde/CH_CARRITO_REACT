@@ -3,17 +3,39 @@ import "./cart.css";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
-export const Cart = () => {
-  const {cart, removeItem} = useContext(CartContext);
+import { db } from "../../firebase/firebase";
+import { collection, addDoc, Timestamp } from "firebase/firestore"
 
-  const calcTotal = () => {
-    let nTotal = 0;
-    cart.map((item) =>{
-      let nSubtotal = item.cantidad * item.price;
-      nTotal = nTotal + nSubtotal;
-      }
-    )
-    return(nTotal.toFixed(2));
+export const Cart = () => {
+  const { cart, removeItem, calcTotal, clear } = useContext(CartContext);
+
+  const [buyer, setBuyer] = useState({
+    name: "",
+    phone: "",
+    email: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    const newValues = {
+      ...buyer,
+      [name]: value,
+    };
+    setBuyer(newValues);
+  }
+
+  const crearOrden = async() => {
+    if ( buyer.name ==="" || buyer.phone ==="" || buyer.email==="" ){
+      alert("UPS... No olvides completar la informacion del comprador!")
+    } else {
+      const date = Timestamp.fromDate(new Date());
+      const total = calcTotal();
+      
+      const newOrder = await addDoc(collection(db, "orders"), { buyer, cart, date, total });
+      alert(`se genero la orden id: ${newOrder.id}`);
+      clear();
+    }
   }
 
   return(
@@ -21,10 +43,10 @@ export const Cart = () => {
     (<main className="formulario_main">
       <h1>FINALIZAR COMPRA</h1>
       <div className="formulario_cart">
-        <form>
-          <label htmlFor="">Nombre y Apellido: <input type="text"/></label>
-          <label htmlFor="">Telefono de contacto: <input type="phone"/></label>
-          <label htmlFor="">Correo: <input type="E-mail"/></label>
+        <form onChange={handleChange}>
+          <label htmlFor="">Nombre y Apellido: <input type="text" name="name" placeholder="Juan Perez" required/></label>
+          <label htmlFor="">Telefono de contacto: <input type="tel" name="phone" placeholder="(011)11223344" required/></label>
+          <label htmlFor="">Correo: <input type="email" name="email" placeholder="juanperez@gmail.com" required/></label>
         </form>
         <table>
           <thead>
@@ -61,13 +83,13 @@ export const Cart = () => {
         <Link to={`/`}>
           <button>Seguir comprando</button>
         </Link>
-        <button>Crear Orden</button>
+        <button onClick={crearOrden}>Crear Orden</button>
       </div>
     </main>)
     :(<main>
-        <h1>UPS! olvidaste agregar los productos al carrito</h1>
+        <h1>No hay nada en tu carrito!</h1>
         <Link to={`/`}>
-          <button>Ir a buscar productos</button>
+          <button>Buscar productos</button>
         </Link>
       </main>)
 
