@@ -1,0 +1,15 @@
+.footer{
+	margin-top: 1em;
+	display: flex;
+	flex-direction: column;
+/*	color: #57dfb7;*/
+}
+.footer a{
+	font-size: 20px;
+}
+
+.copyright{
+	color: black;
+	background-color: whitesmoke;
+	font-size: 10px;
+}

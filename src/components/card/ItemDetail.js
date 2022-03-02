@@ -18,11 +18,11 @@ export const ItemDetail = (product) => {
   return (    
     <div className="producto">
       <div className="caja-izquierda">
-        <img className="imagen" src={product.image} alt="product image" />
-        {showButton?(<ItemCount stock={5} inicial={1} funcion={onAdd}/>)
-        :(<Link to={`/cart`}>
-            <button>Finalizar compra</button>
-          </Link>)} 
+        <div className="imagen">
+          <img src={product.image} alt={product.title} />
+        </div>
+        {product.stock > 0 ?(<span className="enstock">En Stock</span>)
+        :(<span className="sinstock">Sin Stock</span>)}
       </div>
 
       <div className="caja-derecha">
@@ -34,6 +34,10 @@ export const ItemDetail = (product) => {
             <p className="raiting">{product.rating.rate}</p>
           </span>
         </div>
+        {showButton?(<ItemCount enstock={product.stock} stock={5} inicial={1} funcion={onAdd}/>)
+        :(<Link to={`/cart`}>
+            <button>Finalizar compra</button>
+          </Link>)}
 
         <div className="seccion">
           <p className="condiciones">3 cuotas sin interes de US${Math.floor(product.price/3)} con tarjetas seleccionadas</p>
@@ -43,7 +47,6 @@ export const ItemDetail = (product) => {
         <div className="seccion">
           <h2 className="titulo">Descripcion del producto</h2>
           <p className="descripcion">{product.description}</p>
-          <p className="categoria">Categoria: {product.category}</p>
         </div>
       </div>      
     </div>

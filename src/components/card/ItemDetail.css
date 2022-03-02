@@ -15,16 +15,37 @@
   align-items: center;
 }
 .caja-derecha{
+  background-color: white;
   box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;
 }
 .caja-izquierda{
-  padding: 0 70px;
+  padding: 0 60px;
   justify-content: space-around;
   background-color: #bdbdbd;
 }
 
+.enstock,
+.sinstock {
+  font-weight: 600;
+  min-width: 50%;
+  background-color: white;
+}
+.enstock{
+  color: green;
+}
+.sinstock{
+ color: red; 
+}
+
 .imagen {
+  height: 60%;
+  width: 300px;
+  display: flex;
+  background-color: white;
+}
+.imagen img {
   width: 150px;
+  margin: auto;
 }
 
 .seccion{

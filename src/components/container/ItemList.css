@@ -1,4 +1,5 @@
 .categoria-container{
+	margin: 1em;
 	display: flex;
 }
 .items{

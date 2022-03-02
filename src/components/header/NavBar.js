@@ -19,7 +19,7 @@ export const NavBar = () => {
                 <li><NavLink to="/category/electronics">Electronica</NavLink></li>
               </ul>
           </li>
-          <li className="hover"><NavLink to="/">Ver catalogo</NavLink></li>
+          <li className="hover"><NavLink to="/catalogo">Ver catalogo</NavLink></li>
           <li id="carrito"><CartWidget/></li>
         </ul>
       </nav>

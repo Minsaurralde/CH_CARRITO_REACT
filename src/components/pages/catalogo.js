@@ -1,11 +1,14 @@
 import { ItemListContainer } from "../container/ItemListContainer";
+import { Roadmap } from "../roadmap/Roadmap";
 
-export const Home = () => {
+export const Catalogo = () => {
 
   return(
     <main>
-	    <ItemListContainer greeting="Hola! soy la propiedad de bienvenida">
-	      <p>Soy un children p</p>
+	    <ItemListContainer greeting="Tenemos los mejores precios para vos!">
+	    	<div className="rutaClente">
+			    <Roadmap ruta="/" texto="Volver al inicio"></Roadmap>
+			  </div>
 	    </ItemListContainer>
 		</main>
   );

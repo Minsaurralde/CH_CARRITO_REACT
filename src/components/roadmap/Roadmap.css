@@ -1,0 +1,10 @@
+.rutaClente {
+	text-align: left;
+}
+
+.rutaClente a{
+	color: #57dfb7;
+	font-weight: 600;
+	text-decoration: none;
+	list-style: none; /* Eliminacion de viñeta */
+}

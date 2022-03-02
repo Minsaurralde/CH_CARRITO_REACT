@@ -1,9 +1,3 @@
-/* Reset estilos */
-*{
-  margin: 0;
-  padding: 0;
-}
-
 /* Estilos para menu flex */
 .nav-container {
 	background-color: #1b1b1d;

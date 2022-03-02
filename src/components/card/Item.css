@@ -3,7 +3,7 @@
   background-color: #fafafa;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   flex-direction: column;
   width: 240px;
   padding: 24px;
@@ -16,7 +16,12 @@
 }
 
 .image {
-  height: 120px;
+  display: flex;
+  align-items: center;
+  height: 150px;
+}
+.image img {
+  height: 80%;
 }
 
 .data {

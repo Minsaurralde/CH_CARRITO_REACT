@@ -29,8 +29,6 @@ export const CartProvider = ( {children} ) => {
 		else{setCart([...cart,{...obj, cantidad}]);}
 	}
 	function removeItem(id){
-	    // let indexBuscado = cart.indexOf(cart.find((item) => item.id === id));
-	    // cart.splice(indexBuscado,1);
 	    console.log('se elimino del carrito id: ' + id);
 	    setCart(cart.filter(item=>item.id !== id));
 	}

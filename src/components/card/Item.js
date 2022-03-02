@@ -11,13 +11,15 @@ export const Item = ({
   return (
     <div className="product">
       <h2 className="title">{title}</h2>  
-      <img className="image" src={image} alt="product image" />
-      <span className="data">
-        <p className="price">US${price}</p>
-      </span>
-      <Link to={`/detail/${id}`}>
-        <button>Ver Detalle del producto</button>
-      </Link>
+      <div className="image"><img src={image} alt={title} /></div>
+      <div>
+         <span className="data">
+          <p className="price">US${price}</p>
+        </span>
+        <Link to={`/detail/${id}`}>
+          <button>Ver detalle</button>
+        </Link> 
+      </div>
     </div>
   );
 };

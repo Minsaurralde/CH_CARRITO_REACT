@@ -3,8 +3,8 @@ import "./cart.css";
 import { Link } from "react-router-dom";
 import { CartContext } from "../context/CartContext";
 
-import { db } from "../../firebase/firebase";
-import { collection, addDoc, Timestamp } from "firebase/firestore"
+import { db, batch, commitear} from "../../firebase/firebase";
+import { collection, doc, getDoc, addDoc, Timestamp } from "firebase/firestore"
 
 export const Cart = () => {
   const { cart, removeItem, calcTotal, clear } = useContext(CartContext);
@@ -27,14 +27,28 @@ export const Cart = () => {
 
   const crearOrden = async() => {
     if ( buyer.name ==="" || buyer.phone ==="" || buyer.email==="" ){
-      alert("UPS... No olvides completar la informacion del comprador!")
+      alert("UPS... por favor revisa la informacion del comprador!")
     } else {
       const date = Timestamp.fromDate(new Date());
       const total = calcTotal();
       
       const newOrder = await addDoc(collection(db, "orders"), { buyer, cart, date, total });
-      alert(`se genero la orden id: ${newOrder.id}`);
-      clear();
+
+      try{
+          cart.map((item) => {
+            const docRef = doc( collection(db, "items"), `${item.id}` );
+            batch.update(docRef, { stock : item.stock - item.cantidad });
+            });
+
+          const docRef2 = doc( collection(db, "orders"), `${newOrder.id}` );
+          batch.update(docRef2, { status: "Exito" });
+
+          // await batch.commit();
+          commitear();
+
+          alert(`se genero la orden id: ${newOrder.id}`);
+          clear();
+      } catch(error) { console.log(error); }          
     }
   }
 
