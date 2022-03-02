@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Shopping Cart proyect
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) for exclusive use in Frontend CoderHouse class.
 
 ## Available Scripts
 
