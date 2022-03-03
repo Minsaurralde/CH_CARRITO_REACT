@@ -1,6 +1,6 @@
 .payment-container {
 	padding: 2em 0;
-	overflow-x: scroll;
+	overflow-x: auto;
 }
 
 .payment-data {

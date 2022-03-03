@@ -5,7 +5,7 @@ export const Section = ( props ) => {
 
   return(
     <Link to={props.link}>
-      <div class="card-category">
+      <div class="category-card">
         <img src={props.imagen} alt={props.title} />
         <div class="title">
           <div>

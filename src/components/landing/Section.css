@@ -2,14 +2,15 @@
 
 /*******Contenedor*********/
 .category-container{
-	margin: 1em 0;
+	padding: 1em;
 	display: flex;
 	justify-content: space-around;
 	flex-wrap: wrap;
+  gap: 1em;
 	font-family: 'Raleway', Arial, sans-serif;
 }
 
-.card-category {
+.category-card {
 	width: 300px;
 	height: 250px;
 	position: relative;
@@ -19,29 +20,29 @@
 	font-size: 16px;
 	background-color: #000000;
 }
-.card-category *,
-.card-category *:before,
-.card-category *:after {
+.category-card *,
+.category-card *:before,
+.category-card *:after {
 	box-sizing: border-box;
 	transition: all 0.55s ease;
 }
 
 /*******imagen*********/
-.card-category img {
+.category-card img {
   object-fit: cover;
   max-width: 100%;
   backface-visibility: hidden;
   vertical-align: top;
   opacity: 0.9;
 }
-.card-category:hover img {
+.category-card:hover img {
   zoom: 1;
   filter: alpha(opacity=35);
   opacity: 0.35;
 }
 
 /*******Descripcion*********/
-.card-category figcaption {
+.category-card figcaption {
   position: absolute;
   bottom: 42%;
   left: 25px;
@@ -52,87 +53,87 @@
   font-weight: 500;
   letter-spacing: 1.5px;
 }
-.card-category figcaption p {
+.category-card figcaption p {
   margin: 0;
 }
-.card-category:hover figcaption {
+.category-card:hover figcaption {
   opacity: 1;
   transition-delay: 0.2s;
 }
 
 /*******Titulo*********/
-.card-category .title {
+.category-card .title {
   position: absolute;
   top: 58%;
   left: 25px;
   padding: 5px 10px 10px;
 }
-.card-category .title:before,
-.card-category .title:after {
+.category-card .title:before,
+.ccategory-card .title:after {
   height: 2px;
   width: 400px;
   position: absolute;
   content: '';
   background-color: #ffffff;
 }
-.card-category .title:before {
+.category-card .title:before {
   top: 0;
   left: 10px;
   transform: translateX(100%);
 }
-.card-category .title:after {
+.category-card .title:after {
   bottom: 0;
   right: 10px;
   transform: translateX(-100%);
 }
 
-.card-category:hover .title:before,
-.card-category:hover .title:after,
-.card-category:hover .title div:before,
-.card-category:hover .title div:after {
+.category-card:hover .title:before,
+.category-card:hover .title:after,
+.category-card:hover .title div:before,
+.category-card:hover .title div:after {
   transform: translate(0, 0);
 }
-.card-category:hover .title:before,
-.card-category:hover .title:after {
+.category-card:hover .title:before,
+.category-card:hover .title:after {
   transition-delay: 0.15s;
 }
 
-.card-category .title div:before,
-.card-category .title div:after {
+.category-card .title div:before,
+.category-card .title div:after {
   width: 2px;
   height: 300px;
   position: absolute;
   content: '';
   background-color: #ffffff;
 }
-.card-category .title div:before {
+.category-card .title div:before {
   top: 10px;
   right: 0;
   transform: translateY(100%);
 }
-.card-category .title div:after {
+.category-card .title div:after {
   bottom: 10px;
   left: 0;
   transform: translateY(-100%);
 }
 
 /*******Otros*********/
-.card-category h2,
-.card-category h4 {
+.category-card h2,
+.category-card h4 {
   margin: 0;
   text-transform: uppercase;
 }
-.card-category h2 {
+.category-card h2 {
   font-weight: 400;
 }
-.card-category h4 {
+.category-card h4 {
   display: block;
   font-weight: 700;
   background-color: #ffffff;
   padding: 5px 10px;
   color: #000000;
 }
-.card-category a {
+.category-card a {
   position: absolute;
   top: 0;
   bottom: 0;

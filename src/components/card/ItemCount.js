@@ -25,15 +25,15 @@ export const ItemCount = (props) => {
 	};
 
   	return(
-	    <div className="card">
+	    <div className="count-container">
 		    {props.enstock === 0 ?(<span className="sinstock">Unidades agotadas</span>)
 	        :(<div>
-		        <div className="card-count">
+		        <div className="count-item">
 				    <button onClick={(e) => contador(e)}>-</button>
 				    <span> {countClick} </span>
 				    <button onClick={(e) => contador(e)}>+</button>
 			    </div>
-			    <div className="card-add">
+			    <div className="count-add">
 			    	<button onClick={()=>agregar(countClick)}>Agregar al carrito</button>
 			    </div>
 	        </div>

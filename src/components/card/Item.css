@@ -1,38 +1,71 @@
-.product {
-  box-shadow: 0 1px 3px 0 #d4d4d5, 0 0 0 1px #d4d4d5;  
-  background-color: #fafafa;
+.card-container {
+  width: 250px;
+  height: 400px;
+  margin: 30px auto;
+}
+.card {
+  border-radius: 25px;
+  box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-head {
+  padding: 20px;
+  height: 250px;
+  line-height:250px;
+  border-radius: 25px 25px 0 0;
+  background: linear-gradient(135deg, #57dfb7 8%, #1b1b1d 83%);
+  /* orientacion en grados, color 1 y %, color2 y % */
+}
+.card-head div {
+  margin: auto;
+  border-radius: 25px 25px 0 0;
+  background-color: white;
+}
+.card-head img {
+  vertical-align: middle;
+  width: 60%;
+}
+
+.card-body {
+  position: relative;
+  min-height: 180px;
+  text-align: left;
+  border-radius: 0 0 25px 25px;
+  background-color: white;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-direction: column;
-  width: 240px;
-  padding: 24px;
-  border-radius: 16px;
-  gap: 12px;
+  justify-content: space-around;
 }
-.title {
-  margin: 0;
-  font-size: 18px;
-}
-
-.image {
-  display: flex;
-  align-items: center;
-  height: 150px;
-}
-.image img {
-  height: 80%;
+.card-title {
+  padding: 20px 20px 5px 20px;
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
 }
 
-.data {
-  display: flex;
+.card-price h4 {
+  font-size: 11px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+.card-price p{
+  display: inline-block;
+  margin: 0 20px;
 }
 
-.price {
-  padding: 4px 8px;
-  border-radius: 4px;
-  background-color: #bdbdbd;
-  margin: 4px;
-  font-size: 12px;
+.card-flag {
+  display: inline-block;
+  position: absolute;
+  bottom: 1em;
+  right: -10px;
+  background: #11e95b;
+  padding: 7px 20px;
+  font-size: 24px;
+  font-weight: 200;
   color: white;
+  border-radius: 7px;
+  margin-top: -13px;
+  margin-left: -5px;
+  box-shadow: -10px 20px 15px -10px rgba(17, 233, 91, 0.3);
 }
