@@ -128,7 +128,7 @@ export const Cart = () => {
     </main>)
     :(<main>
         <h1>No hay nada en tu carrito!</h1>
-        <Link to={`/`}>
+        <Link to={`/catalogo`}>
           <button>Buscar productos</button>
         </Link>
       </main>)

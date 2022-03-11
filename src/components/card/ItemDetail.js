@@ -13,7 +13,14 @@ export const ItemDetail = (product) => {
   function onAdd(cantidad){
     setShowButton(false);
     addItem(product, cantidad);
-    alert(`Agregaste ${cantidad} items al carrito \nPresioná Finalizar compra para terminar`);
+
+    const modal = document.getElementById("modal");
+    modal.style.display = "flex";
+  }
+
+  function close(){
+    const modal = document.getElementById("modal");
+    modal.style.display = "none";
   }
 
   return (
@@ -64,6 +71,7 @@ export const ItemDetail = (product) => {
           </div>
         </div>
       </div>
+      <ModalContainer title="Exito!" info="El producto seleccionado se agrego correctamente al carrito" cta={close}/>
     </div>  
 
   );
