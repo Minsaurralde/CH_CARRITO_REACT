@@ -7,11 +7,8 @@
 
 body {
   background-color: #e7e7e7;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
 }
 main {
   min-height: 600px;
@@ -22,4 +19,27 @@ main h1 {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/*********************************************/
+  /*CLASES DE USO COMUN*/
+/*********************************************/
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.columns {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.flex-center{
+  align-items: center;
+}
+.flex-grow {
+  flex: 1;
+}
+.left-text {
+  text-align: left;
 }

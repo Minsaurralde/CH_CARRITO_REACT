@@ -12,12 +12,12 @@ export const ItemCount = (props) => {
 		const operacion = e.target.innerText;
 
 		switch(operacion){
-			case "+":
+			case "▲":
 			if(countClick < stock){
 				setCountClick(countClick + 1);}
 			break;
 
-			case "-":
+			case "▼":
 			if(countClick > 1){
 				setCountClick(countClick - 1);}
 			break;
@@ -26,12 +26,15 @@ export const ItemCount = (props) => {
 
   	return(
 	    <div className="count-container">
-		    {props.enstock === 0 ?(<span className="sinstock">Unidades agotadas</span>)
-	        :(<div>
-		        <div className="count-item">
-				    <button onClick={(e) => contador(e)}>-</button>
-				    <span> {countClick} </span>
-				    <button onClick={(e) => contador(e)}>+</button>
+		    {props.enstock === 0 ?(<span className="sinstock">Sin stock</span>)
+	        :(<div className="row flex-center">
+		        <div className="count-item row flex-center">
+		        	<span className="quantity">Quantity</span>
+		        	<div>
+		        		<span className="number"> {countClick} </span>
+		        		<button onClick={(e) => contador(e)}>▲</button>
+		        		<button onClick={(e) => contador(e)}>▼</button>
+		        	</div> 
 			    </div>
 			    <div className="count-add">
 			    	<button onClick={()=>agregar(countClick)}>Agregar al carrito</button>

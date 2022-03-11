@@ -1,13 +1,19 @@
+/*********************************************/
+  /*CONTENEDOR*/
+/*********************************************/
 .card-container {
   width: 250px;
-  height: 400px;
+  min-height: 400px;
   margin: 30px auto;
 }
 .card {
   border-radius: 25px;
-  box-shadow: -11px 11px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: -11px 5px 11px 0 rgba(0, 0, 0, 0.3);
 }
 
+/*********************************************/
+  /*HEAD*/
+/*********************************************/
 .card-head {
   padding: 20px;
   height: 250px;
@@ -26,9 +32,13 @@
   width: 60%;
 }
 
+/*********************************************/
+  /*BODY*/
+/*********************************************/
 .card-body {
   position: relative;
-  min-height: 180px;
+  padding: 20px;
+  height: 150px;
   text-align: left;
   border-radius: 0 0 25px 25px;
   background-color: white;
@@ -36,8 +46,11 @@
   flex-direction: column;
   justify-content: space-around;
 }
+/*.product-desc{
+  flex: 1;
+}*/
+
 .card-title {
-  padding: 20px 20px 5px 20px;
   display: block;
   font-size: 13px;
   font-weight: 500;
@@ -46,14 +59,16 @@
 
 .card-price h4 {
   font-size: 11px;
-  padding: 10px 20px;
+  padding: 10px 0;
   text-transform: uppercase;
 }
-.card-price p{
+.card-price p {
   display: inline-block;
-  margin: 0 20px;
 }
 
+/*********************************************/
+  /*ACTION BUTTON*/
+/*********************************************/
 .card-flag {
   display: inline-block;
   position: absolute;

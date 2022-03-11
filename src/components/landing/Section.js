@@ -5,9 +5,9 @@ export const Section = ( props ) => {
 
   return(
     <Link to={props.link}>
-      <div class="category-card">
+      <div className="category-card">
         <img src={props.imagen} alt={props.title} />
-        <div class="title">
+        <div className="title">
           <div>
             <h2>Categoria</h2>
             <h4>{props.title}</h4>
@@ -16,7 +16,6 @@ export const Section = ( props ) => {
         <figcaption>
           <p>{props.descripcion}</p>
         </figcaption>
-        <a href="#"></a>
       </div>
     </Link>
   );

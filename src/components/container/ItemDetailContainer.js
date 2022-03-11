@@ -34,7 +34,7 @@ export const ItemDetailContainer = () => {
           <Roadmap ruta="/catalogo" texto="Lista de productos"></Roadmap>
           <Roadmap ruta={`/category/${category}`} texto={category}></Roadmap>
        </div>
-       <h1>Detale del producto</h1>
+       <h1>Detalle del producto</h1>
       {product ? (
         <ItemDetail {...product} />
       ) : (

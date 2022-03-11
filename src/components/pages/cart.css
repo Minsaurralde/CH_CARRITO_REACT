@@ -1,51 +1,69 @@
-.formulario_main{
+/*********************************************/
+  /*CONTENEDOR*/
+/*********************************************/
+.formulario_container{
 	max-width: 900px;
 	margin: 0 auto;
 	display: flex;
 	flex-direction: column;
 }
-
-.formulario_cart{
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
+/*********************************************/
+  /*FORM*/
+/*********************************************/
+.formulario_cart .remove{
+	cursor: pointer;
+}
+.formulario_cart .remove:hover{
+	color: #536dfe;
 }
 .formulario_cart form label{
 	margin: 1em;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
+	text-align: left;
 }
-input{
+.formulario_cart p{
+	min-width: 160px;
+	margin-right: auto;
+}
+.formulario_cart input{
 	max-width: 70%;
 	flex: 1;
 	border-color: lightgray;
 }
-input:focus{
+.formulario_cart input:focus{
 	border-color: rgb(255, 144, 0);
 	box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255, 144, 0, 0.6);
 	outline: 0 none;
 }
-input:invalid+span:after {
+.formulario_cart input:invalid+span:after {
   content: '✖';
   padding-left: 5px;
 }
 
-input:valid+span:after {
+.formulario_cart input:valid+span:after {
   content: '✓';
   padding-left: 5px;
 }
 
-table{
+/*********************************************/
+  /*SHOPING CART LIST*/
+/*********************************************/
+.formulario_cart table{
 	text-align: center;
 	border-collapse:collapse;
 }
-tfoot{
+.formulario_cart tfoot{
 	text-align: right;
 }
-th, td { 
+.formulario_cart th,
+.formulario_cart td { 
    border-bottom: 1px solid lightgray;
 }
 
+/*********************************************/
+  /*ACTION BUTTON*/
+/*********************************************/
 .button_section{
 	margin: 1em;
 	display: flex;

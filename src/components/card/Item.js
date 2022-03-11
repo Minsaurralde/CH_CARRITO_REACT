@@ -9,28 +9,28 @@ export const Item = ({
 }) => {
 
   return (
-    <div class="card-container">
-      <div class="card">
+    <div className="card-container">
+      <div className="card">
 
-        <div class="card-head">
+        <div className="card-head">
           <div><img src={image} alt={title}/></div> 
         </div>
 
-        <div class="card-body">
-          <div class="product-desc">
-            <h2 class="card-title">{title}</h2>
+        <div className="card-body">
+          <div className="product-desc">
+            <h2 className="card-title">{title}</h2>
           </div>
-          <div class="product-properties">
-            <span class="card-price">
+          <div className="product-properties">
+            <span className="card-price">
               <h4>Precio</h4>
               <p>US${price}</p>
             </span> 
           </div>
           <Link to={`/detail/${id}`}>
-              <span class="card-flag">
-                <b>Lo quiero!</b>
-              </span>
-            </Link> 
+            <span className="card-flag">
+              <b>Lo quiero!</b>
+            </span>
+          </Link>
         </div>
       </div>
     </div>
